@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '@/assets/Logo.png';
 import Link from './Link';
 import { SelectedPage } from '@/types/TSelectedPage';
+import CusomButton from '@/UI/CusomButton';
 
 type Props = {
     selectedPage: SelectedPage;
@@ -12,7 +13,7 @@ const Header = ({ selectedPage, setSelectedPage }: Props) => {
     const flexBetween = 'flex itens-center justify-between';
     return (
         <nav>
-            <div className={`${flexBetween} fixed top-0 z-30 w-full bg-primary-500 py-6 drop-shadow`}>
+            <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
                 <div className={`${flexBetween} mx-auto w-5/6`}>
                     <div className={`${flexBetween} w-full gap-16`}>
                         {/* left side img */}
@@ -49,7 +50,7 @@ const Header = ({ selectedPage, setSelectedPage }: Props) => {
 
                             <div className={`${flexBetween} gap-8`}>
                                 <p>Sing In</p>
-                                <p>Become a member</p>
+                                <CusomButton setSelectedPage={setSelectedPage}>Become a member</CusomButton>
                             </div>
                         </div>
                     </div>
