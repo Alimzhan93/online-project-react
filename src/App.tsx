@@ -1,6 +1,7 @@
 import Header from '@/scenes/header';
 import { useState, useEffect } from 'react';
 import { SelectedPage } from './types/TSelectedPage';
+import Home from '@/scenes/home';
 
 function App() {
     const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -29,6 +30,7 @@ function App() {
                 selectedPage={selectedPage}
                 setSelectedPage={(page) => setSelectedPage(page)}
             />
+            <Home />
         </div>
     );
 }
