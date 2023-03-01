@@ -2,6 +2,7 @@ import Header from '@/scenes/header';
 import { useState, useEffect } from 'react';
 import { SelectedPage } from './types/TSelectedPage';
 import Home from '@/scenes/home';
+import Benefits from '@/scenes/benefits/Benefits';
 
 function App() {
     const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -28,9 +29,10 @@ function App() {
             <Header
                 isTopOfPage={isTopOfPage}
                 selectedPage={selectedPage}
-                setSelectedPage={(page) => setSelectedPage(page)}
+                setSelectedPage={setSelectedPage}
             />
-            <Home />
+            <Home setSelectedPage={setSelectedPage} />
+            <Benefits setSelectedPage={setSelectedPage} />
         </div>
     );
 }
