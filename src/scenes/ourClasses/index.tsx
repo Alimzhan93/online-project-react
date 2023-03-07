@@ -2,11 +2,57 @@ import React from 'react';
 import { SelectedPage } from '@/types/TSelectedPage';
 import { motion } from 'framer-motion';
 import HeaderText from '@/UI/HeaderText';
+import Class from '@/UI/Class';
+import { IOurClasses } from '@/types/ourClasses';
+import Image1 from '@/assets/image1.png';
+import Image2 from '@/assets/image2.png';
+import Image3 from '@/assets/image3.png';
+import Image4 from '@/assets/image4.png';
+import Image5 from '@/assets/image5.png';
+import Image6 from '@/assets/image6.png';
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
 
+const ourClasse: IOurClasses[] = [
+    {
+        id: 1,
+        title: 'Weight training classes',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint non consectetur eveniet expedita mollitia nostrum!',
+        image: Image1,
+    },
+    {
+        id: 2,
+        title: 'Ab core classes',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint non consectetur eveniet expedita mollitia nostrum!',
+        image: Image2,
+    },
+    {
+        id: 3,
+        title: 'Adventure classes',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint non consectetur eveniet expedita mollitia nostrum!',
+        image: Image3,
+    },
+    {
+        id: 4,
+        title: 'Yoga classes',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint non consectetur eveniet expedita mollitia nostrum!',
+        image: Image4,
+    },
+    {
+        id: 5,
+        title: 'Leg training classes',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint non consectetur eveniet expedita mollitia nostrum!',
+        image: Image5,
+    },
+    {
+        id: 6,
+        title: 'Swimming classes',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint non consectetur eveniet expedita mollitia nostrum!',
+        image: Image6,
+    },
+];
 const index = ({ setSelectedPage }: Props) => {
     return (
         <section
@@ -36,6 +82,18 @@ const index = ({ setSelectedPage }: Props) => {
                         </p>
                     </div>
                 </motion.div>
+                <div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
+                    <ul className='w-[2800px] whitespace-nowrap'>
+                        {ourClasse.map((ourclass) => (
+                            <Class
+                                key={ourclass.id}
+                                title={ourclass.title}
+                                description={ourclass.description}
+                                image={ourclass.image}
+                            />
+                        ))}
+                    </ul>
+                </div>
             </motion.div>
         </section>
     );
