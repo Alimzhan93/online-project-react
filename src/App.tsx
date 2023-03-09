@@ -5,6 +5,7 @@ import Home from '@/scenes/home';
 import Benefits from '@/scenes/benefits/';
 import OurClasses from '@/scenes/ourClasses';
 import JoinNow from '@/scenes/joinnow';
+import Footer from '@/scenes/footer';
 
 function App() {
     const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -37,6 +38,7 @@ function App() {
             <Benefits setSelectedPage={setSelectedPage} />
             <OurClasses setSelectedPage={setSelectedPage} />
             <JoinNow setSelectedPage={setSelectedPage} />
+            <Footer />
         </div>
     );
 }

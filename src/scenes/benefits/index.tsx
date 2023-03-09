@@ -34,7 +34,7 @@ const benefits: IBenefits[] = [
 ];
 
 const motionContainer: Variants = {
-    hedden: {},
+    hidden: {},
     visible: {
         transition: {
             staggerChildren: 0.2,
@@ -54,8 +54,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
             <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}>
                 {/* Header */}
                 <motion.div
-                    className='md:w3/5 md:my-5'
-                    initial='hedden'
+                    className='md:my-5 md:w-3/5'
+                    initial='hidden'
                     whileInView='visible'
                     viewport={{
                         once: true,
@@ -104,7 +104,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
                         <div className='relative'>
                             <div className='befor:absolute before:-top-20 before:-left-20 before:z-[-1] before:content-abstractwaves'>
                                 <motion.div
-                                    initial='hedden'
+                                    initial='hidden'
                                     whileInView='visible'
                                     viewport={{
                                         once: true,
@@ -123,7 +123,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
                         </div>
                         {/* description */}
                         <motion.div
-                            initial='hedden'
+                            initial='hidden'
                             whileInView='visible'
                             viewport={{
                                 once: true,
